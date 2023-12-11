@@ -7,7 +7,7 @@ document.body.innerHTML = '<div id="root"></div>'
 
 const router = createBrowserRouter(routerConfig)
 const root = ReactDOM.createRoot(document.getElementById('root'))
-
+// 尝试推送
 root.render(
   <React.StrictMode>
     <RouterProvider router={router} />
