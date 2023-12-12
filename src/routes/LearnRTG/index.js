@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import TransitionTest from './TransitionTest'
 import CSSTransitionTest from './CSSTransitionTest'
 import SwitchTransitionTest from './SwitchTransitionTest'
+import TransitionGroupTest from './TransitionGroupTest'
 
 export default function LearnRTG() {
   const [inProp, setInProp] = useState(false)
@@ -14,6 +15,7 @@ export default function LearnRTG() {
         <CSSTransitionTest in={inProp} />
       </div>
       <SwitchTransitionTest />
+      <TransitionGroupTest/>
     </div>
   )
 }
