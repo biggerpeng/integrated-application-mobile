@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import 'normalize.css'
 import routerConfig from './router'
 
 document.body.innerHTML = '<div id="root"></div>'
