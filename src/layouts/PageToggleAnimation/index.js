@@ -10,7 +10,7 @@ export default function PageToggleAnimation() {
   const matches = useMatches()
 
   const currentMatch = matches.find(item => item.pathname === location.pathname)
-  const currentNodeRef = currentMatch.handle.nodeRef
+  const currentNodeRef = currentMatch.handle?.nodeRef
   const animationClass = navigationType === 'POP' ? 'back' : 'forward'
 
   return (
