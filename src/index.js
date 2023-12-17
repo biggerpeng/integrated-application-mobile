@@ -1,12 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { RouterProvider } from 'react-router-dom'
 import 'normalize.css'
-import routerConfig from './router'
+import router from './router'
 
 document.body.innerHTML = '<div id="root"></div>'
 
-const router = createBrowserRouter(routerConfig)
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
 root.render(

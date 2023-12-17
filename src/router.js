@@ -1,11 +1,11 @@
-import React, { lazy } from 'react'
+import React, { createRef, lazy } from 'react'
 import PageToggleAnimation from './layouts/PageToggleAnimation'
+import { createBrowserRouter } from 'react-router-dom'
 
 const Home = lazy(() => import('./routes/Home'))
 const LearnRTG = lazy(() => import('./routes/LearnRTG'))
 const Test1 = lazy(() => import('./routes/Test1'))
 const Test2 = lazy(() => import('./routes/Test2'))
-const Animate = lazy(() => import('./animate'))
 
 const routerConfig = [
   {
@@ -13,30 +13,35 @@ const routerConfig = [
     children: [
       {
         path: '/',
-        element: <Home />
+        element: <Home />,
+        handle: {
+          nodeRef: createRef()
+        }
       },
       {
         path: '/learnRTG',
-        element: <LearnRTG />
+        element: <LearnRTG />,
+        handle: {
+          nodeRef: createRef()
+        }
       },
       {
         path: '/test1',
-        element: (
-          <Animate key='test1'>
-            <Test1 />
-          </Animate>
-        )
+        element: <Test1 />,
+        handle: {
+          nodeRef: createRef()
+        }
       },
       {
         path: '/test2',
-        element: (
-          <Animate key='test2'>
-            <Test2 />
-          </Animate>
-        )
+        element: <Test2 />,
+        handle: {
+          nodeRef: createRef()
+        }
       }
     ]
   }
 ]
 
-export default routerConfig
+const router = createBrowserRouter(routerConfig)
+export default router
