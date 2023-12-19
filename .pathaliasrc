@@ -1,4 +1,5 @@
-// 让vscode识别webpack alias配置，实现点击跳转文件，需要安装vscode插件path-alias
 {
+  "title": "path-alias别名配置",
+  "description": "让vscode识别webpack alias配置，实现点击跳转文件，需要安装vscode插件path-alias",
   "@": "${cwd}/src"
 }
