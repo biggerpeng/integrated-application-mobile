@@ -35,6 +35,7 @@ module.exports = {
 
   output: {
     path: isProduction ? path.resolve(__dirname, './dist') : undefined,
+    publicPath:'/',
     filename: isProduction ? 'static/js/[name].[contenthash:10].js' : 'static/js/[name].js',
     chunkFilename: isProduction ? 'static/js/[name].[contenthash:10].chunk.js' : 'static/js/[name].chunk.js',
     assetModuleFilename: 'static/media/[hash:10][ext][query]',
