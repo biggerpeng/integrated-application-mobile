@@ -9,6 +9,7 @@ const Test1 = lazy(() => import('./routes/Test1'))
 const Test2 = lazy(() => import('./routes/Test2'))
 const Test3 = lazy(() => import('./routes/Test3'))
 const Test4 = lazy(() => import('./routes/Test4'))
+const TestInternationalization = lazy(() => import('./routes/TestInternationalization'))
 
 const routerConfig = [
   {
@@ -62,6 +63,14 @@ const routerConfig = [
           {
             path: '/test2',
             element: <Test2 />,
+            handle: {
+              nodeRef: createRef(),
+              animationType: 'default'
+            }
+          },
+          {
+            path: '/testInternationalization',
+            element: <TestInternationalization />,
             handle: {
               nodeRef: createRef(),
               animationType: 'default'
