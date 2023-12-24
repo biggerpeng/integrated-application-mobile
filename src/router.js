@@ -22,7 +22,6 @@ const routerConfig = [
             path: '/',
             element: <Home />,
             handle: {
-              nodeRef: createRef(),
               animationType: 'default'
             }
           },
@@ -30,7 +29,6 @@ const routerConfig = [
             path: '/learnRTG',
             element: <LearnRTG />,
             handle: {
-              nodeRef: createRef(),
               animationType: 'default'
             }
           },
@@ -38,7 +36,6 @@ const routerConfig = [
             path: '/test1',
             element: <Test1 />,
             handle: {
-              nodeRef: createRef(),
               animationType: 'default'
             },
             children: [
@@ -46,7 +43,6 @@ const routerConfig = [
                 path: 'test3',
                 element: <Test3 />,
                 handle: {
-                  nodeRef: createRef(),
                   animationType: 'default'
                 }
               },
@@ -54,7 +50,6 @@ const routerConfig = [
                 path: 'test4',
                 element: <Test4 />,
                 handle: {
-                  nodeRef: createRef(),
                   animationType: 'default'
                 }
               }
@@ -64,7 +59,6 @@ const routerConfig = [
             path: '/test2',
             element: <Test2 />,
             handle: {
-              nodeRef: createRef(),
               animationType: 'default'
             }
           },
@@ -72,7 +66,6 @@ const routerConfig = [
             path: '/testInternationalization',
             element: <TestInternationalization />,
             handle: {
-              nodeRef: createRef(),
               animationType: 'default'
             }
           }
@@ -82,5 +75,18 @@ const routerConfig = [
   }
 ]
 
+// 自动创建nodeRef
+function autoCreateRef(array) {
+  array.forEach(item => {
+    // 判断添加 handle 对象
+    !item.handle && (item.handle = {})
+    // 为每个路由添加nodeRef
+    item.handle.nodeRef = createRef()
+    // 递归创建
+    item.children && autoCreateRef(item.children)
+  })
+}
+
+autoCreateRef(routerConfig)
 const router = createBrowserRouter(routerConfig)
 export default router
